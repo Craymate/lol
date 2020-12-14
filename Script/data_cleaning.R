@@ -57,6 +57,9 @@ world <- world %>%
   left_join(winsworld, by = "team")
 # Add total number of matchs won for each team
 
+local <- local %>%
+  filter(datacompleteness == "complete")
+
 lck <- local %>%
   select(league, local_total_wins, date,
          position, team, kills, 
@@ -64,7 +67,7 @@ lck <- local %>%
          golddiffat15, cspm, dragons, 
          opp_dragons, firstherald, barons, 
          `team kpm`, localwinrate, 
-         damagetakenperminute, dpm, xpdiffat15)
+         damagetakenperminute, dpm, xpdiffat15, firsttower, damageshare)
 
 wcs <- world %>%
   select(league, world_total_wins, date,
@@ -72,8 +75,9 @@ wcs <- world %>%
          assists, vspm, golddiffat15, cspm, 
          dragons, opp_dragons, firstherald, 
          barons, `team kpm`, worldwinrate, 
-         damagetakenperminute, dpm, xpdiffat15)
+         damagetakenperminute, dpm, xpdiffat15, firsttower, damageshare)
 # Selecting the needed variables
+
 
 # LCK data processing Part
 
@@ -87,7 +91,8 @@ lckplayer <- lckplayer %>%
             localwinrate = round(unique(localwinrate), 3),
             KDA = round((sum(kills) + sum(assists))/sum(deaths), 3), 
             vspm = round(mean(vspm), 3), 
-            cspm = round(mean(cspm), 3))
+            cspm = round(mean(cspm), 3),
+            dms = round(mean(damageshare), 3))
 # Processing each variable
 
 ## Team level
@@ -104,7 +109,8 @@ lckteam <- lckteam %>%
             dtpm = round(mean(damagetakenperminute), 3),
             dpm = round(mean(dpm), 3),
             golddiffat15 = round(mean(golddiffat15), 3), 
-            xpdiffat15 = round(mean(xpdiffat15), 3))
+            xpdiffat15 = round(mean(xpdiffat15), 3),
+            firsttower = round(mean(firsttower), 3))
 # Processing each variable
 
 lck <- lckplayer %>%
@@ -122,7 +128,8 @@ wcsplayer <- wcsplayer %>%
             worldwinrate = round(unique(worldwinrate), 3),
             KDA = round((sum(kills) + sum(assists))/sum(deaths), 3), 
             vspm = round(mean(vspm), 3), 
-            cspm = round(mean(cspm), 3))
+            cspm = round(mean(cspm), 3),
+            dms = round(mean(damageshare), 3))
 # Processing each variable
 
 ## Team level
@@ -139,7 +146,8 @@ wcsteam <- wcsteam %>%
             dtpm = round(mean(damagetakenperminute), 3),
             dpm = round(mean(dpm), 3),
             golddiffat15 = round(mean(golddiffat15), 3), 
-            xpdiffat15 = round(mean(xpdiffat15), 3))
+            xpdiffat15 = round(mean(xpdiffat15), 3),
+            firsttower = round(mean(firsttower), 3))
 # Processing each variable
 
 wcs <- wcsplayer %>%
