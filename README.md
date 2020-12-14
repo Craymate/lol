@@ -18,4 +18,4 @@ Output folder contains the statistical report and codes.
 
 Script folder contains all the scripts of this project.
 
-- data_cleaning.R is the script used to clean the raw data of 2020 matches.
+- `data_cleaning.R` is the script used to clean the raw data of 2020 matches.
