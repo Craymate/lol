@@ -37,3 +37,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Files containing data
+*./Input/2020_LoL_esports_match_data_from_OraclesElixir_20201203.csv
