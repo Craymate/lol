@@ -3,11 +3,11 @@ Code and report for estimating a team's performance(i.e. Win Rate) in World Cham
 
 # Overview
 
-This repo contains raw and cleaned datasets used in the model, and is created by Zhendong Zhang. In this project, I analyzed DWG's experience in their way to year 2020 world champion in order to get the prior distributions for my Bayesian Regression Model. This model uses the matches data(records) from Season 10 LCK and World Championship for trainning purpose. This repo contains following 3 sections: Input, Output, Script.
+This repo contains raw and cleaned datasets used in the model, and is created by Zhendong Zhang. In this project, I analyzed DWG's experience in their way to year 2020 world champion in order to get the prior distributions for my Bayesian Regression Model. This model uses the matches data(records) from Season 10 LCK and World Championship for trainning purpose. This repo contains following 3 sections: Input, Output, Script. The raw data is not included since I do not legally own this data.
 
-Input folder contains all the source data, including both raw and cleaned data.
+Input folder contains all the source data.
 
-- `2020_LoL_esports_match_data_from_OraclesElixir_20201203` is the raw data, from: https://oracleselixir.com/tools/downloads. Please choose 2020 Match Data.
+- Raw data is from: https://oracleselixir.com/tools/downloads. Please choose 2020 Match Data.
 - `lck_data.csv` is the cleaned LCK portion of data of 2020.
 - `world_data.csv` is the cleaned World Championship portion of data of 2020.
 
