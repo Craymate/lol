@@ -1,3 +1,12 @@
+#### Preamble ####
+# Purpose: Prepare and clean the matches data from https://oracleselixir.com/tools/downloads, selecting the 2020 Match Data.
+# Author: Zhendong Zhang
+# Data: December 15th 2020
+# Contact:zhendong.zhang@mail.utoronto.ca
+# Pre-requisites: 
+# - Need to have downloaded the 2020 Match Data from https://oracleselixir.com/tools/downloads save to project/Input/ 
+
+
 library(readr)
 library(tidyverse)
 
