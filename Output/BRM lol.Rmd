@@ -434,10 +434,10 @@ For LCK teams, based on figure 10, there are over-representations for the second
 ```{r trend-est, message = FALSE,warning = FALSE, echo=FALSE, fig.height = 4, fig.width = 6, fig.cap = "Estimation Win Rates' Trend", fig.pos='H'}
 compest %>%
   ggplot(aes(x=as.factor(rank), y=Estimated_Win_Rate)) + geom_point(stats="identity") + geom_line(aes(group = 1)) +
-  theme_bw() + labs(y = "Estimated Win Rates (%)", x = "Rank of the Team")
+  theme_bw() + labs(y = "Estimated Win Rates (%)", x = "Rank of the Team") + geom_errorbar(aes(ymin=Estimated_Win_Rate-error, ymax=Estimated_Win_Rate+error), width=.2, position=position_dodge(0.05))
 ```
 
-From figure 11, under the estimation, half of LCK teams would have 0% chance to win the world champion. There is a huge decrease between the third and forth rank, since the actual win rates for teams after the third place are 0 in training data set.
+From figure 11, under the estimation, half of LCK teams would have 0% chance to win the world champion. There is a huge decrease between the third and forth rank, since the actual win rates for teams after the third place are 0 in training data set. Also, we can identify the deviation reaches the maximum at the forth rank, with decreasing to both tails. This is similar to normal distribution, so it means this is a good fit.
 
 
 # Discussion
